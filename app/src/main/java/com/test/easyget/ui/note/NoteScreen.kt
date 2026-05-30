@@ -27,6 +27,7 @@ import androidx.compose.material.icons.filled.TextIncrease
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -52,7 +53,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 
 private val presetColors = listOf(
     Color.Black, Color(0xFFE53935), Color(0xFF43A047),
-    Color(0xFF1E88E5), Color(0xFF8E24AA), Color(0xFFFF6F00)
+    Color(0xFF1E88E5), Color(0xFF8E24AA), Color(0xFFFF6F00),
+    Color.White
 )
 
 @Composable
@@ -111,7 +113,7 @@ fun NoteScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp)
-                    .background(Color(0xFFF5F5F5))
+                    .background(MaterialTheme.colorScheme.surfaceVariant)
                     .padding(horizontal = 4.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -194,7 +196,7 @@ private fun FontToolbar(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color(0xFFF0F0F0))
+            .background(MaterialTheme.colorScheme.surfaceContainerLow)
             .padding(horizontal = 8.dp, vertical = 4.dp)
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
